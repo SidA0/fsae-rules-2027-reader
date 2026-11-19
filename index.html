@@ -7,6 +7,7 @@
   <meta name="description" content="A searchable, unofficial Formula SAE 2027 rules reader with combustion and electric views.">
   <title>FSAE 2027 Rules | Longhorn Racing</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="quick-ref.css">
   <script defer src="vendor/marked.umd.js"></script>
   <script defer src="vendor/purify.min.js"></script>
   <script defer src="app.js"></script>
@@ -38,6 +39,12 @@
     </section>
     <aside class="right-rail" aria-label="On this page"><div class="rail-title">ON THIS PAGE</div><nav id="outline"></nav><div class="rail-note">Use this reader for navigation. The official SAE documents control.</div></aside>
   </main>
+  <div id="quick-shade" class="quick-shade" hidden></div>
+  <aside id="quick-panel" class="quick-panel" role="dialog" aria-label="Rule quick reference" aria-modal="false" hidden>
+    <div class="quick-header"><div><span class="toolbar-kicker">QUICK REFERENCE</span><h2 id="quick-code"></h2></div><button id="quick-close" type="button" aria-label="Close quick reference">×</button></div>
+    <div id="quick-scroll" class="quick-scroll"><div id="quick-context" class="quick-context"></div><div id="quick-body" class="quick-body document"></div></div>
+    <div class="quick-actions"><button id="quick-open" type="button" class="primary">Open in rulebook</button><a id="quick-source" href="#" target="_blank" rel="noopener noreferrer">View source</a></div>
+  </aside>
   <dialog id="update-dialog"><form method="dialog"><div class="dialog-top"><div><span class="toolbar-kicker">SOURCE CONTROL</span><h2>Update rules</h2></div><button class="dialog-close" value="cancel" aria-label="Close">×</button></div><p>Paste a public GitHub repository link containing the structured Formula SAE Markdown files. The latest commit will load into this browser.</p><label for="repo-url">GitHub repository URL</label><input id="repo-url" type="url" required value="https://github.com/ppmend/FSAE_RULES_2027" placeholder="https://github.com/owner/repository"><div class="dialog-actions"><button value="cancel" class="secondary">Cancel</button><button id="update-submit" type="button" class="primary">Check for updates</button></div><div id="update-status" class="update-status" role="status" aria-live="polite"></div></form></dialog>
 </body>
 </html>

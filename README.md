@@ -6,6 +6,7 @@ An unofficial, searchable Formula SAE rules reader inspired by the navigation of
 
 - Combustion, electric, and all-section views. Shared sections appear in both vehicle views.
 - Rulebook and alphabetical section sorting, full-text search, and an on-page outline.
+- Clickable rule citations with a right-side quick reference showing the cited rule text and a link to its full section.
 - An **Update rules** button that accepts a public GitHub repository URL, checks its latest commit, and loads its `FSAE_Rules_*` and `FSAE_Driverless_*` Markdown files. Updates are stored in this browser using IndexedDB; the published snapshot remains available as a fallback.
 - Static files suitable for GitHub Pages. No server or API key is required.
 

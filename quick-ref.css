@@ -1,0 +1,62 @@
+.rule-ref {
+  display: inline;
+  border: 0;
+  border-bottom: 1px dotted currentColor;
+  border-radius: 0;
+  background: none;
+  color: var(--burnt-dark);
+  padding: 0 1px;
+  line-height: inherit;
+  font: inherit;
+  font-weight: 700;
+  vertical-align: baseline;
+}
+.rule-ref:hover, .rule-ref:focus-visible {
+  color: var(--burnt);
+  border-bottom-style: solid;
+  background: #fff0e7;
+  outline: none;
+}
+.quick-shade[hidden], .quick-panel[hidden] { display: none !important; }
+.quick-shade { position: fixed; inset: 0; background: #17201d77; z-index: 39; }
+.quick-panel {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: min(440px, 100vw);
+  z-index: 40;
+  background: #fff;
+  box-shadow: -16px 0 50px #111d1d30;
+  display: flex;
+  flex-direction: column;
+  border-left: 4px solid var(--burnt);
+}
+.quick-header {
+  padding: 27px 28px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: var(--dark);
+  color: #fff;
+  gap: 15px;
+}
+.quick-header .toolbar-kicker { color: #d79070; }
+.quick-header h2 { font-family: Georgia, serif; font-size: 34px; font-weight: 500; line-height: 1.1; margin: 5px 0 0; }
+.quick-header button { border: 0; background: transparent; color: #c9d0ce; font-size: 28px; line-height: 1; padding: 0 2px; }
+.quick-header button:hover { color: #fff; }
+.quick-scroll { overflow: auto; flex: 1; padding: 0 28px; }
+.quick-context { font-size: 13px; color: #8a5650; font-weight: 750; padding: 25px 0 17px; border-bottom: 1px solid var(--line); }
+.quick-body.document { padding: 23px 0 30px; font-size: 15px; line-height: 1.65; max-width: none; }
+.quick-body.document p { margin-bottom: 15px; }
+.quick-body.document ul { padding-left: 20px; }
+.quick-body.document li.selected-subpart { background: #fff1e8; box-shadow: 0 0 0 5px #fff1e8; border-radius: 2px; }
+.quick-body.document table { font-size: 13px; }
+.quick-actions { border-top: 1px solid var(--line); padding: 18px 28px; background: #fafbfa; display: flex; align-items: center; justify-content: space-between; gap: 15px; }
+.quick-actions a { font-size: 13px; font-weight: 750; text-decoration: none; white-space: nowrap; }
+@media (max-width: 760px) {
+  .quick-header { padding: 22px; }
+  .quick-scroll { padding: 0 22px; }
+  .quick-actions { padding: 15px 22px; }
+  .quick-shade { background: #17201d99; }
+}
