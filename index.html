@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#191b1e">
+  <meta name="description" content="A searchable, unofficial Formula SAE 2027 rules reader with combustion and electric views.">
+  <title>FSAE 2027 Rules | Longhorn Racing</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="vendor/marked.umd.js"></script>
+  <script defer src="vendor/purify.min.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <div class="topline"></div>
+  <header class="site-header">
+    <div class="brand"><div class="brand-mark" aria-hidden="true">L<span>R</span></div><div><strong>LONGHORN RACING</strong><small>RULES REFERENCE · 2027</small></div></div>
+    <div class="header-actions"><a class="source-link" href="https://github.com/ppmend/FSAE_RULES_2027" target="_blank" rel="noopener">Source repository</a><button id="update-open" class="update-button" type="button">Update rules</button></div>
+  </header>
+  <div class="notice"><strong>Unofficial reference.</strong> Verify requirements against the current <a href="https://www.fsaeonline.com/cdsweb/gen/documentresources.aspx" target="_blank" rel="noopener">official SAE documents</a>. This reader is based on community-maintained Markdown.</div>
+  <main class="layout">
+    <aside class="sidebar" id="sidebar" aria-label="Rules navigation">
+      <div class="sidebar-head"><span>RULEBOOK</span><button id="sidebar-close" type="button" aria-label="Close navigation">×</button></div>
+      <div class="sidebar-search"><label for="search">Search rules</label><input id="search" type="search" placeholder="Rule, phrase, section…" autocomplete="off"><kbd>/</kbd></div>
+      <div class="filter-label">VEHICLE CLASS</div>
+      <div class="class-tabs" role="group" aria-label="Vehicle class"><button type="button" data-class="combustion" aria-pressed="true">Combustion</button><button type="button" data-class="electric" aria-pressed="false">Electric</button><button type="button" data-class="all" aria-pressed="false">All</button></div>
+      <div class="sort-row"><label for="sort">Sort sections</label><select id="sort"><option value="rulebook">Rulebook order</option><option value="az">A to Z</option></select></div>
+      <nav id="section-list" aria-label="Sections"></nav>
+      <div class="sidebar-foot"><span id="section-count"></span><span id="source-date"></span></div>
+    </aside>
+    <section class="main-column">
+      <div class="mobile-nav"><button id="sidebar-open" type="button">Browse sections</button><span id="mobile-section"></span></div>
+      <div class="hero"><div class="eyebrow">FORMULA SAE / 2027 RULES</div><h1>Built for the<br><em>details.</em></h1><p>Find the exact rule, move between sections, and keep the latest GitHub revision close at hand.</p><div class="hero-meta"><span><b id="doc-count">—</b> sections</span><span><b id="rule-count">—</b> numbered rules</span><span id="revision-label">Repository snapshot</span></div></div>
+      <div class="content-toolbar"><div><span class="toolbar-kicker">NOW READING</span><strong id="current-title">Loading rules…</strong></div><div class="toolbar-actions"><button id="copy-link" type="button">Copy link</button><a id="view-source" href="https://github.com/ppmend/FSAE_RULES_2027" target="_blank" rel="noopener">View source</a></div></div>
+      <div id="search-summary" class="search-summary" hidden></div>
+      <article id="document" class="document" aria-live="polite"></article>
+      <footer class="site-footer">Longhorn Racing inspired visual theme · Unofficial Formula SAE reference · <a href="https://www.fsaeonline.com/cdsweb/gen/documentresources.aspx" target="_blank" rel="noopener">Official documents</a></footer>
+    </section>
+    <aside class="right-rail" aria-label="On this page"><div class="rail-title">ON THIS PAGE</div><nav id="outline"></nav><div class="rail-note">Use this reader for navigation. The official SAE documents control.</div></aside>
+  </main>
+  <dialog id="update-dialog"><form method="dialog"><div class="dialog-top"><div><span class="toolbar-kicker">SOURCE CONTROL</span><h2>Update rules</h2></div><button class="dialog-close" value="cancel" aria-label="Close">×</button></div><p>Paste a public GitHub repository link containing the structured Formula SAE Markdown files. The latest commit will load into this browser.</p><label for="repo-url">GitHub repository URL</label><input id="repo-url" type="url" required value="https://github.com/ppmend/FSAE_RULES_2027" placeholder="https://github.com/owner/repository"><div class="dialog-actions"><button value="cancel" class="secondary">Cancel</button><button id="update-submit" type="button" class="primary">Check for updates</button></div><div id="update-status" class="update-status" role="status" aria-live="polite"></div></form></dialog>
+</body>
+</html>
